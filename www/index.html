@@ -13,6 +13,7 @@
 		
 		<!-- Call Initialization within Index -->
 		<script>
+		/*
 			function initialize() {
 				document.addEventListener('deviceready', onDeviceReady, false);
 			}
@@ -40,12 +41,14 @@
 				console.log('Received Event: ' + id);
 			}
 
-
+		*/
 		</script>
 		
 
 		<!-- Initialize OneSignal -->
 		<script>			
+		
+		/*
 			function pushNotification () {
 				document.addEventListener('deviceready', function () {
 				  // Enable to debug issues.
@@ -62,6 +65,7 @@
 					.endInit();
 				}, false);
 			}
+		*/
 		</script>
 		
 		
@@ -78,7 +82,7 @@
 
     </head>
     
-	<body onload="initialize()">
+	<body onload="app.initialize()">
 		<center>
 		<div id="nameHeader" style="background-color:#58D68D;width:100%;">
 			<h2><font color=#F7F7EB>FINALS - CMSC202<br>
