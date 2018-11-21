@@ -28,7 +28,7 @@ var app = {
 
 app.initialize();
 
-// Required script for OneSignal
+// Required script for OneSignal - PhoneGap Build
 
 // Add to index.js or the first page that loads with your app.
 // For Intel XDK and please add this to your app.js.
