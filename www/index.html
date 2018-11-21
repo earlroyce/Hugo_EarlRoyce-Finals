@@ -25,18 +25,8 @@
 				document.getElementById("vibrateButton").addEventListener("click", vibratePhone);
 				document.getElementById("cameraButton").addEventListener("click", takePhoto);
 				
-				// Required script for OneSignal - PhoneGap Build
-		
-				console.log ("OneSignal Initialized.");
-				  
-				var notificationOpenedCallback = function(jsonData) {
-					console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
-				};
-
-				window.plugins.OneSignal
-					.startInit("b026acb3-9788-477f-91c6-b1a23ff9e805")
-					.handleNotificationOpened(notificationOpenedCallback)
-					.endInit();				
+				document.getElementById("pushNotification").addEventListener("click", pushNotification);
+							
 			}
 		
 		    function receivedEvent(id) {
@@ -53,6 +43,28 @@
 
 		</script>
 		
+
+		<!-- Initialize OneSignal -->
+		<script>			
+			function pushNotification () {
+				document.addEventListener('deviceready', function () {
+				  // Enable to debug issues.
+				  // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
+				  console.log("OneSignal Initialized");
+				  
+				  var notificationOpenedCallback = function(jsonData) {
+					console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
+				  };
+
+				  window.plugins.OneSignal
+					.startInit("YOUR_APPID")
+					.handleNotificationOpened(notificationOpenedCallback)
+					.endInit();
+				}, false);
+			}
+		</script>
+		
+		
 		<!-- Call my scripts, each of which corresponds to a required function -->
 		
 		<script type="text/javascript" src="js/battStat.js"></script>
@@ -62,6 +74,7 @@
 		
 		<!-- Extra script for other functions required in the app. -->
 		<script type="text/javascript" src="js/extra.js"></script>
+		
 
     </head>
     
@@ -96,7 +109,7 @@
 				<td width="20"></td>
 				<td>Get My Location</td>
 			</tr>
-			<tr><td height="30" colspan="3"></td></tr>
+			<tr><td height="20" colspan="3"></td></tr>
 			<tr>
 				<!-- <td height="25"> <button id ="vibrateButton" onclick="vibratePhone.start()"><img src="img/vibrate.png" width="60%"></button></td> -->
 				<td height="25"> <button id ="vibrateButton" onclick="vibratePhone()"><img src="img/vibrate.png" width="60%"></button></td>
@@ -109,7 +122,19 @@
 				<td></td>
 				<td>Take Photo</td>
 			</tr>
-			<tr><td height="50" colspan="3"></td></tr
+						<tr><td height="30" colspan="3"></td></tr>
+			<tr>
+				<td height="25"> <button id ="sendSMS" onclick="sendSMS()"><img src="img/vibrate.png" width="60%"></button></td>
+				<td></td>
+				<td height="25"> <button id="pushNotification" onclick="pushNotification()"><img src="img/camera.png" width="60%"></button></td>
+			</tr>
+			<tr><td height="10" colspan="3"></td></tr>
+			<tr>
+				<td>Send SMS</td>
+				<td></td>
+				<td>Push Notification</td>
+			</tr>
+			<tr><td height="30" colspan="3"></td></tr
 		</table>
 		</div id="mainDisplay">
 		
