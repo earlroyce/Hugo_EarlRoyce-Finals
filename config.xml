@@ -36,7 +36,7 @@
         <allow-intent href="market:*" />
     </platform>
    
-    <engine name="android" spec="^7.0.0" />
+    <engine name="android" spec="^7.1.1" />
     <engine name="browser" spec="^5.0.4" />
    
     <plugin name="cordova-plugin-camera" spec="^4.0.3" />
@@ -60,6 +60,10 @@
 
 	<preference name="android-build-tool" value="gradle" />
 	<preference name="android-minSdkVersion" value="16" />
+	
+	<!-- Plugin config for cordova-sms-plugin -->
+	
+	<gap:plugin spec="https://github.com/cordova-sms/cordova-sms-plugin" source="git" />
 	
 	<icon src="res/icon.png" />
 </widget>
