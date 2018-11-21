@@ -11,64 +11,6 @@
 		<script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
 		
-		<!-- Call Initialization within Index -->
-		<script>
-		/*
-			function initialize() {
-				document.addEventListener('deviceready', onDeviceReady, false);
-			}
-	  
-			function onDeviceReady() {
-				receivedEvent('deviceready');
-				document.getElementById("battButton").addEventListener("click", battStat);
-				document.getElementById("locationButton").addEventListener("click", geoLocation);
-				<!-- document.getElementById("vibrateButton").addEventListener("click", vibratePhone.start); -->
-				document.getElementById("vibrateButton").addEventListener("click", vibratePhone);
-				document.getElementById("cameraButton").addEventListener("click", takePhoto);
-				
-				document.getElementById("pushNotification").addEventListener("click", pushNotification);
-							
-			}
-		
-		    function receivedEvent(id) {
-				var parentElement = document.getElementById(id);
-				var listeningElement = parentElement.querySelector('.listening');
-				var receivedElement = parentElement.querySelector('.received');
-
-				listeningElement.setAttribute('style', 'display:none;');
-				receivedElement.setAttribute('style', 'display:block;');
-
-				console.log('Received Event: ' + id);
-			}
-
-		*/
-		</script>
-		
-
-		<!-- Initialize OneSignal -->
-		<script>			
-		
-		/*
-			function pushNotification () {
-				document.addEventListener('deviceready', function () {
-				  // Enable to debug issues.
-				  // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
-				  console.log("OneSignal Initialized");
-				  
-				  var notificationOpenedCallback = function(jsonData) {
-					console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
-				  };
-
-				  window.plugins.OneSignal
-					.startInit("YOUR_APPID")
-					.handleNotificationOpened(notificationOpenedCallback)
-					.endInit();
-				}, false);
-			}
-		*/
-		</script>
-		
-		
 		<!-- Call my scripts, each of which corresponds to a required function -->
 		
 		<script type="text/javascript" src="js/battStat.js"></script>
@@ -76,13 +18,18 @@
 		<script type="text/javascript" src="js/vibratePhone.js"></script>
 		<script type="text/javascript" src="js/takePhoto.js"></script>
 		
+		<script type="text/javascript" src="js/sendSMS.js"></script>
+		
 		<!-- Extra script for other functions required in the app. -->
 		<script type="text/javascript" src="js/extra.js"></script>
 		
+		<!-- Initialize -->
+		<script> app.initialize(); </script>
 
     </head>
     
-	<body onload="app.initialize()">
+	<!-- <body onload="app.initialize()"> -->
+	<body>
 		<center>
 		<div id="nameHeader" style="background-color:#58D68D;width:100%;">
 			<h2><font color=#F7F7EB>FINALS - CMSC202<br>
@@ -128,9 +75,9 @@
 			</tr>
 						<tr><td height="30" colspan="3"></td></tr>
 			<tr>
-				<td height="25"> <button id ="sendSMS" onclick="sendSMS()"><img src="img/vibrate.png" width="60%"></button></td>
+				<td height="25"> <button id ="sendSMS" onclick="openSMS()"><img src="img/sms.png" width="60%"></button></td>
 				<td></td>
-				<td height="25"> <button id="pushNotification" onclick="pushNotification()"><img src="img/camera.png" width="60%"></button></td>
+				<td height="25"> <button id="pushNotification" onclick="pushNotification()"><img src="img/push.png" width="60%"></button></td>
 			</tr>
 			<tr><td height="10" colspan="3"></td></tr>
 			<tr>
@@ -158,10 +105,6 @@
 		</table>
 		</p>
 		</center>
-		
-		<script>
-			alert("Note: Photos are saved in the Pictures folder.");
-		</script>
 		
 		<!-- camera testers -->
 		<a href id="camText"></a>

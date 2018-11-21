@@ -28,6 +28,8 @@ function onSuccess(imageURI) {
 	var image = document.getElementById('myImage');
 		image.src = imageURI;
 
+	// alert("Note: Photos are saved in the Pictures folder.");
+	
 	viewPhoto = "View Captured Photo";
 	viewPhotoLink = viewPhoto.link(image.src);
 	photoMessage = "Image saved to Pictures folder.<br><br>" + viewPhotoLink;
