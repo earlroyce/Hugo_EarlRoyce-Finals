@@ -1,0 +1,22 @@
+/*
+My customized Stylesheet for the Midterms
+*/
+	table, td, th {
+		border-collapse: collapse;
+		text-align: center;
+		table-layout: fixed;
+		word-wrap: break-word;
+	}
+		
+	th {
+		border: 1px solid #dddddd;
+		height: 100px;
+	}
+		
+	button {
+		width: 100px;
+	}
+	
+	* {
+		font-family: Tahoma, Geneva, sans-serif;
+	}
