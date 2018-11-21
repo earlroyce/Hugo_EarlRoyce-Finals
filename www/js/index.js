@@ -12,6 +12,8 @@ var app = {
 		document.getElementById("locationButton").addEventListener("click", geoLocation);
 		document.getElementById("vibrateButton").addEventListener("click", vibratePhone);
 		document.getElementById("cameraButton").addEventListener("click", takePhoto);
+		
+
     },
 
     receivedEvent: function(id) {
@@ -24,25 +26,7 @@ var app = {
 
         console.log('Received Event: ' + id);
     }
+		  
 };
 
 app.initialize();
-
-// Required script for OneSignal - PhoneGap Build
-
-// Add to index.js or the first page that loads with your app.
-// For Intel XDK and please add this to your app.js.
-
-document.addEventListener('deviceready', function () {
-  // Enable to debug issues.
-  // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
-  
-  var notificationOpenedCallback = function(jsonData) {
-    console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
-  };
-
-  window.plugins.OneSignal
-    .startInit("b026acb3-9788-477f-91c6-b1a23ff9e805")
-    .handleNotificationOpened(notificationOpenedCallback)
-    .endInit();
-}, false);
