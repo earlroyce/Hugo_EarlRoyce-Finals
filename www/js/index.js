@@ -12,6 +12,7 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+
     },
     // deviceready Event Handler
     //
@@ -33,8 +34,12 @@ var app = {
     }
 };
 
-// Add to index.js or the first page that loads with your app.
-// For Intel XDK and please add this to your app.js.
+/* Delay OneSignal Initialization */
+
+// window.plugins.OneSignal.setRequiresUserPrivacyConsent(true); //delayed
+// window.plugins.OneSignal.setRequiresUserPrivacyConsent(false); //not delayed
+
+/* Required initialization for OneSignal */
 
 document.addEventListener('deviceready', function () {
   // Enable to debug issues.
@@ -49,3 +54,7 @@ document.addEventListener('deviceready', function () {
     .handleNotificationOpened(notificationOpenedCallback)
     .endInit();
 }, false);
+
+/* Initialize Unsubscribed to Push Notifications */
+
+window.plugins.OneSignal.setSubscription(false);

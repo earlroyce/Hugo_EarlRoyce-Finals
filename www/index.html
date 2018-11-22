@@ -19,6 +19,7 @@
 		<script type="text/javascript" src="js/takePhoto.js"></script>
 		
 		<script type="text/javascript" src="js/sendSMS.js"></script>
+		<script type="text/javascript" src="js/pushNotification.js"></script>
 		
 		<!-- Extra script for other functions required in the app. -->
 		<script type="text/javascript" src="js/extra.js"></script>
@@ -111,32 +112,27 @@
 		<br / >
 		<img id="myImage" style="display:none">
 		
+		
+		<!-- SMS Interface Using A Modal Box -->
+		
 		<!-- The Modal -->
-		<div id="myModal" class="modal">
+		<div id="myModal" class="modal" style="display:none">
 
 		  <!-- Modal content -->
 		  <div class="modal-content">
 			<span class="close">&times;</span>
 			<center>
 			<h3>SMS Interface</h3>
+			<br />
+			<input id="numberTxt" placeholder="Enter mobile number" value="" type="tel" />
 			<br /> <br />
-			<table id = "mainTable">		
-				<tr>
-					<th colspan="3"> <textarea id="messageTxt" placeholder="Enter message" value=""></textarea>
-					</th>
-				</tr>
+			<textarea id="messageTxt" placeholder="Enter message" value=""></textarea>
+			<br /> <br />
+			<input type="button" onclick="send.sendSms()" value="Send SMS" />
+			<h5><i>Note: Standard charges will apply.</i><h5>
 
-				<tr>
-					<td colspan="3" height="75"> <input id="numberTxt" placeholder="Enter mobile number" value="" type="tel" />
-					</td>
-				</tr>
 				
-				<tr>
-					<td colspan="3" height="75"> <input type="button" onclick="send.sendSms()" value="Send SMS" />
-					</td>
-				</tr>
-				
-			</table>
+
 			</center>
 		  </div>
 

@@ -21,10 +21,12 @@ My customized Stylesheet for the Midterms
 		font-family: Tahoma, Geneva, sans-serif;
 	}
 	
-	
+/*
+Additional styles for the Finals
+*/	
 	/* The Modal (background) */
 	.modal {
-		display: none; /* Hidden by default */
+		/* display: none; /* Hidden by default */
 		position: fixed; /* Stay in place */
 		z-index: 1; /* Sit on top */
 		padding-top: 100px; /* Location of the box */
