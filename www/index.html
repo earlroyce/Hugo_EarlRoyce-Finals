@@ -6,7 +6,7 @@
         
         <link rel="stylesheet" type="text/css" href="css/indexMidterms.css">
 		
-		<title>CMSC 202 Midterms - Hugo</title>
+		<title>CMSC 202 Finals - Hugo</title>
 		
 		<script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
@@ -60,7 +60,7 @@
 				<td width="20"></td>
 				<td>Get My Location</td>
 			</tr>
-			<tr><td height="20" colspan="3"></td></tr>
+			<tr><td height="10" colspan="3"></td></tr>
 			<tr>
 				<!-- <td height="25"> <button id ="vibrateButton" onclick="vibratePhone.start()"><img src="img/vibrate.png" width="60%"></button></td> -->
 				<td height="25"> <button id ="vibrateButton" onclick="vibratePhone()"><img src="img/vibrate.png" width="60%"></button></td>
@@ -73,11 +73,11 @@
 				<td></td>
 				<td>Take Photo</td>
 			</tr>
-						<tr><td height="30" colspan="3"></td></tr>
+			<tr><td height="10" colspan="3"></td></tr>
 			<tr>
-				<td height="25"> <button id ="sendSMS" onclick="openSMS()"><img src="img/sms.png" width="60%"></button></td>
+				<td height="25"> <button id ="sendSMS" onclick="modalSMS()"><img src="img/sms.png" width="60%"></button></td>
 				<td></td>
-				<td height="25"> <button id="pushNotification" onclick="pushNotification()"><img src="img/push.png" width="60%"></button></td>
+				<td height="25"> <button id="pushNotification" onclick="pushNotification()"><img src="img/push.png" width="50%"></button></td>
 			</tr>
 			<tr><td height="10" colspan="3"></td></tr>
 			<tr>
@@ -85,7 +85,7 @@
 				<td></td>
 				<td>Push Notification</td>
 			</tr>
-			<tr><td height="30" colspan="3"></td></tr
+			<tr><td height="20" colspan="3"></td></tr
 		</table>
 		</div id="mainDisplay">
 		
@@ -110,6 +110,37 @@
 		<a href id="camText"></a>
 		<br / >
 		<img id="myImage" style="display:none">
+		
+		<!-- The Modal -->
+		<div id="myModal" class="modal">
+
+		  <!-- Modal content -->
+		  <div class="modal-content">
+			<span class="close">&times;</span>
+			<center>
+			<h3>SMS Interface</h3>
+			<br /> <br />
+			<table id = "mainTable">		
+				<tr>
+					<th colspan="3"> <textarea id="messageTxt" placeholder="Enter message" value=""></textarea>
+					</th>
+				</tr>
+
+				<tr>
+					<td colspan="3" height="75"> <input id="numberTxt" placeholder="Enter mobile number" value="" type="tel" />
+					</td>
+				</tr>
+				
+				<tr>
+					<td colspan="3" height="75"> <input type="button" onclick="send.sendSms()" value="Send SMS" />
+					</td>
+				</tr>
+				
+			</table>
+			</center>
+		  </div>
+
+		</div>
 		
     </body>
 </html>
