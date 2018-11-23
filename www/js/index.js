@@ -36,7 +36,7 @@ var app = {
 
 /* Delay OneSignal Initialization */
 
-// window.plugins.OneSignal.setRequiresUserPrivacyConsent(true); //delayed
+window.plugins.OneSignal.setRequiresUserPrivacyConsent(true); //delayed
 // window.plugins.OneSignal.setRequiresUserPrivacyConsent(false); //not delayed
 
 /* Required initialization for OneSignal */
@@ -52,10 +52,10 @@ document.addEventListener('deviceready', function () {
   window.plugins.OneSignal
     .startInit("b026acb3-9788-477f-91c6-b1a23ff9e805")
     .handleNotificationOpened(notificationOpenedCallback)
-	.setSubscription(false);
+//	.setSubscription(false);
     .endInit();
 }, false);
 
 /* Initialize Unsubscribed to Push Notifications */
 
-//window.plugins.OneSignal
+window.plugins.OneSignal.setSubscription(false);

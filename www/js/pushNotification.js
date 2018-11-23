@@ -5,14 +5,15 @@
  */
 var subscription;
 
- function pushNotification() {
+function pushNotification() {
 		
-	var notSubscribed = "You are not subscribed to Push Notifications. Click OK to Subscribe";
+	var notSubscribed = "You are not subscribed to Push Notifications. Click OK to Subscribe.";
 	var yesSubscribed = "You are already subscribed. Click Cancel to Unsubscribe."
 	
 	if (!subscription) {
 		if (confirm(notSubscribed)) {
 			subscription = true;
+			window.plugins.OneSignal.provideUserConsent(true);
 			window.alert("Thanks for subscribing.");
 		} else {
 			subscription = false;
