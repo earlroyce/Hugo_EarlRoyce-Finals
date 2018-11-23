@@ -52,9 +52,10 @@ document.addEventListener('deviceready', function () {
   window.plugins.OneSignal
     .startInit("b026acb3-9788-477f-91c6-b1a23ff9e805")
     .handleNotificationOpened(notificationOpenedCallback)
+	.setSubscription(false);
     .endInit();
 }, false);
 
 /* Initialize Unsubscribed to Push Notifications */
 
-window.plugins.OneSignal.setSubscription(false);
+//window.plugins.OneSignal
