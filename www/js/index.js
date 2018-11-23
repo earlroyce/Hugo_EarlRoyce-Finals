@@ -20,6 +20,7 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+		window.plugins.OneSignal.setSubscription(false);
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -36,7 +37,7 @@ var app = {
 
 /* Delay OneSignal Initialization */
 
-window.plugins.OneSignal.setRequiresUserPrivacyConsent(true); //delayed
+//window.plugins.OneSignal.setRequiresUserPrivacyConsent(true); //delayed
 // window.plugins.OneSignal.setRequiresUserPrivacyConsent(false); //not delayed
 
 /* Required initialization for OneSignal */
@@ -52,10 +53,9 @@ document.addEventListener('deviceready', function () {
   window.plugins.OneSignal
     .startInit("b026acb3-9788-477f-91c6-b1a23ff9e805")
     .handleNotificationOpened(notificationOpenedCallback)
-//	.setSubscription(false);
     .endInit();
 }, false);
 
 /* Initialize Unsubscribed to Push Notifications */
 
-window.plugins.OneSignal.setSubscription(false);
+// window.plugins.OneSignal.setSubscription(false);

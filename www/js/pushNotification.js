@@ -13,7 +13,7 @@ function pushNotification() {
 	if (!subscription) {
 		if (confirm(notSubscribed)) {
 			subscription = true;
-			window.plugins.OneSignal.provideUserConsent(true);
+			//window.plugins.OneSignal.provideUserConsent(true);
 			window.alert("Thanks for subscribing.");
 		} else {
 			subscription = false;
