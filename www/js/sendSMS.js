@@ -4,17 +4,6 @@
  * by Earl Royce Hugo
  */
 
-//Open SMS Page
-function openSMS() {
-	// var timeoutVar;
-	
-	// Cancel vibrate if running
-	navigator.vibrate(0);
-	extra.cancelTimeOut(timeoutVar);
-	
-	window.location = "pages/sms.html";
-}
-
 //Send SMS 
 var send = {
     sendSms: function() {
@@ -41,6 +30,10 @@ var send = {
 // SMS Modal Window
 
 function modalSMS() {
+	
+	// Cancel vibrate if running
+	navigator.vibrate(0);
+	extra.cancelTimeOut(timeoutVar);
 
 	// Get the modal
 	var modal = document.getElementById('myModal');

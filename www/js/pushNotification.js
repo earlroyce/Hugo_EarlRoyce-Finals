@@ -3,7 +3,9 @@
  * References: OneSignal Documentation
  * by Earl Royce Hugo
  */
-var subscription;
+
+ window.plugins.OneSignal.setSubscription(false);
+ var subscription;
 
 function pushNotification() {
 		
@@ -29,7 +31,7 @@ function pushNotification() {
 		
 	}
 	 
-	console.log("Subscription status is",subscription);
+	//console.log("Subscription status is",subscription);
 	
 	// window.plugins.OneSignal.provideUserConsent(subscription);
 	window.plugins.OneSignal.setSubscription(subscription);

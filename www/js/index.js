@@ -20,7 +20,6 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-		window.plugins.OneSignal.setSubscription(false);
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -38,7 +37,7 @@ var app = {
 /* Delay OneSignal Initialization */
 
 //window.plugins.OneSignal.setRequiresUserPrivacyConsent(true); //delayed
-// window.plugins.OneSignal.setRequiresUserPrivacyConsent(false); //not delayed
+//window.plugins.OneSignal.setRequiresUserPrivacyConsent(false); //not delayed
 
 /* Required initialization for OneSignal */
 
