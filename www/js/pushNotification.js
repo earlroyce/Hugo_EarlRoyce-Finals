@@ -5,10 +5,13 @@
  */
 
 window.plugins.OneSignal.setSubscription(false);
-var subscription = storage.getItem(subscribed);
+var subscribed;
+//var subscription = storage.getItem(subscribed);
 
 function pushNotification() {
-		
+	
+	var subscription = storage.getItem(subscribed);
+	
 	var notSubscribed = "You are not subscribed to receive Push Notifications. Click OK to Subscribe.";
 	var yesSubscribed = "You are subscribed to receive Push Notifications. Click Cancel to Unsubscribe."
 	
