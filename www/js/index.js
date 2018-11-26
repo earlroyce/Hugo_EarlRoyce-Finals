@@ -34,6 +34,10 @@ var app = {
     }
 };
 
+/* Local Storage Variable */
+
+var storage = window.localStorage;
+
 /* Delay OneSignal Initialization */
 
 //window.plugins.OneSignal.setRequiresUserPrivacyConsent(true); //delayed

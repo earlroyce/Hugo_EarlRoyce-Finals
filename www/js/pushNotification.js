@@ -4,28 +4,28 @@
  * by Earl Royce Hugo
  */
 
- window.plugins.OneSignal.setSubscription(false);
- var subscription;
+window.plugins.OneSignal.setSubscription(false);
+var subscription = storage.getItem(subscribed);
 
 function pushNotification() {
 		
-	var notSubscribed = "You are not subscribed to Push Notifications. Click OK to Subscribe.";
-	var yesSubscribed = "You are already subscribed. Click Cancel to Unsubscribe."
+	var notSubscribed = "You are not subscribed to receive Push Notifications. Click OK to Subscribe.";
+	var yesSubscribed = "You are subscribed to receive Push Notifications. Click Cancel to Unsubscribe."
 	
 	if (!subscription) {
 		if (confirm(notSubscribed)) {
-			subscription = true;
+			storage.setItem(subscribed, true);
 			//window.plugins.OneSignal.provideUserConsent(true);
-			window.alert("Thanks for subscribing.");
+			window.alert("Thanks for subscribing. You will start receiving Push Notifications.");
 		} else {
-			subscription = false;
+			storage.setItem(subscribed, false);
 		}
 	} else {
 		if (confirm(yesSubscribed)) {
-			subscription = true;
+			storage.setItem(subscribed, true);
 			window.alert("Thanks. You will continue to receive Push Notifications.");
 		} else {
-			subscription = false;
+			storage.setItem(subscribed, false);
 			window.alert("You have unsubscribed and will stop receiving Push Notifications.");
 		}
 		
