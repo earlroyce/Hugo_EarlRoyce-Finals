@@ -123,17 +123,19 @@
 			<span class="close">&times;</span>
 			<center>
 			<h3>SMS Interface</h3>
-			<p>You can send SMS.</p>
+			<h5>This interface is only for sending SMS.</h5>
+			<h5>To read messages, open your native SMS app.</h5>
 			<br />
-			<span>To: </span><input id="numberTxt" placeholder="Enter mobile number" value="" type="tel" />
-			<br /> <br />
-			<textarea id="messageTxt" placeholder="Enter message" value=""></textarea>
-			<br /> <br />
-			<input type="button" onclick="send.sendSms()" value="Send SMS" />
+			<form id="smsForm">
+				<span>To: </span><input id="numberTxt" placeholder="Enter mobile number" value="" type="tel" />
+				<br /> <br />
+				<textarea id="messageTxt" placeholder="Enter message" value=""></textarea>
+				<br /> <br />
+				<input type="button" onclick="send.sendSms()" value="Send SMS" />
+			</form>
 			<h5><i>Note: Standard charges will apply.</i><h5>
-
+	
 				
-
 			</center>
 		  </div>
 
