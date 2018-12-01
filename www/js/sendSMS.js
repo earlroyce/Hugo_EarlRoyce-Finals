@@ -22,8 +22,10 @@ var send = {
 
         var success = function() {
 			alert('Message sent successfully');
+			document.getElementById("smsForm").reset();	
+			modal.style.display = "none";
 			document.getElementByID("displayResult").innerHTML = "Message sent successfully.";
-			document.getElementById("smsForm").reset();				
+			
 		};
         
 		var error = function (e) { alert('Message Failed:' + e); };

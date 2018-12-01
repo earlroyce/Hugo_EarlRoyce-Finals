@@ -36,7 +36,7 @@ var app = {
 
 /* Local Storage Variable */
 
-var storage = localStorage;
+var storage = window.localStorage;
 
 /* Delay OneSignal Initialization */
 

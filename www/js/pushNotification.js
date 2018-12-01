@@ -4,24 +4,9 @@
  * by Earl Royce Hugo
  */
 
-window.plugins.OneSignal.getPermissionSubscriptionState(function(status) {
-  status.subscriptionStatus.subscribed; // Bool
-  //status.subscriptionStatus.userSubscriptionSetting; // Bool
-  status.subscriptionStatus.userId; // String: OneSignal Player ID
-  status.subscriptionStatus.pushToken; // String: Device Identifier from FCM/APNs
-
-	var subscription = status.subscriptionStatus.subscribed;
-});
-
-//var subscription = status.subscriptionStatus.subscribed;
-
-//window.plugins.OneSignal.setSubscription(false);
-
-//console.log (subscribed);
+var subscription;
 
 function pushNotification() {
-	
-	//var subscription = storage.getItem(subscribed);
 	
 	var notSubscribed = "You are not subscribed to receive Push Notifications. Click OK to Subscribe.";
 	var yesSubscribed = "You are subscribed to receive Push Notifications. Click Cancel to Unsubscribe."
