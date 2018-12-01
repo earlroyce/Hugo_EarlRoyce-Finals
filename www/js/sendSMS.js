@@ -1,6 +1,6 @@
 /*
  * Script for Sending SMS
- * References: 
+ * References: cordova.sms-plugin
  * by Earl Royce Hugo
  */
 
@@ -9,7 +9,7 @@ var send = {
     sendSms: function() {
         var number = document.getElementById('numberTxt').value.toString();
         var message = document.getElementById('messageTxt').value;
-        console.log("number=" + number + ", message= " + message);
+        // console.log("number=" + number + ", message= " + message);
 
         //CONFIGURATION
         var options = {
@@ -20,10 +20,15 @@ var send = {
             }
         };
 
-        var success = function() { alert('Message sent successfully'); };
+        var success = function() {
+			alert('Message sent successfully');
+			document.getElementByID("displayResult").innerHTML = "Message sent successfully.";
+			document.getElementById("smsForm").reset();				
+		};
         
 		var error = function (e) { alert('Message Failed:' + e); };
-        sms.send(number, message, options, success, error);
+        
+		sms.send(number, message, options, success, error);
     }
 };
 
@@ -45,13 +50,22 @@ function modalSMS() {
 	var span = document.getElementsByClassName("close")[0];
 
 	// When the user clicks the button, open the modal 
-	//btn.onclick = function() {
-		modal.style.display = "block";
-	//}
+	modal.style.display = "block";
 
 	// When the user clicks on <span> (x), close the modal
 	span.onclick = function() {
-		modal.style.display = "none";
+		
+		if (document.getElementById("messageTxt").value != "") {
+		
+			if (confirm("This will clear unsent messages. Continue?")) {
+				document.getElementById("smsForm").reset();	
+				modal.style.display = "none";
+			}
+		} else {
+			document.getElementById("smsForm").reset();	
+			modal.style.display = "none";
+		}
+
 	}
 
 	// When the user clicks anywhere outside of the modal, close it
