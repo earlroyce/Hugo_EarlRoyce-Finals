@@ -21,19 +21,49 @@ function geoLocation() {
 	}
 
 	function display(position) {
+
+		// Update displayResult
 		document.getElementById("displayResult").innerHTML = "Latitude: " +
 		position.coords.latitude + 
 			"<br>Longitude: " + position.coords.longitude;
+		
+		// Get the modal
+		var modal = document.getElementById('mapModal');
+		
+		// Get the <span> element that closes the modal
+		var span = document.getElementsByClassName("closeMap")[0];
+
+		// When the user clicks the button, open the modal 
+		modal.style.display = "block";
+
+		// When the user clicks on <span> (x), close the modal
+		span.onclick = function() {
+			modal.style.display = "none";
+		}
+
+		// When the user clicks anywhere outside of the modal, close it
+		window.onclick = function(event) {
+			if (event.target == modal) {
+				modal.style.display = "none";
+			}
+		}
 				
-		/*
+		document.getElementById("geoTextDisplay").innerHTML = "Latitude: " +
+		position.coords.latitude + 
+			"<br>Longitude: " + position.coords.longitude;
+				
+		
 		//Open in Maps if with Google Key
 		var latlon = position.coords.latitude + "," + position.coords.longitude;
+		var markerPosition = {lat: position.coords.latitude, lng: position.coords.longitude};
 		
 		var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="
-		+latlon+"&zoom=14&size=400x300&sensor=false&key=YOUR_:KEY";
+		+latlon+"&zoom=17&size=275x200&sensor=false&key=AIzaSyAM5tok2j0mi9Ro5h-XP4tfY_Pu4A_Ikak";
 
-		document.getElementById("mainDisplay").innerHTML = "<img src='"+img_url+"'>";
-		*/
+		document.getElementById("mapDisplay").innerHTML = "<img src='"+img_url+"'>";
+		
+		// location marker
+		var marker = new google.maps.Marker({position: markerPosition, map: mapDisplay});
 				
 	}
 

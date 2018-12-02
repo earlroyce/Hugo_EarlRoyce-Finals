@@ -1,6 +1,6 @@
 /*
  * Script for Sending SMS
- * References: cordova.sms-plugin
+ * References: cordova-sms-plugin
  * by Earl Royce Hugo
  */
 
@@ -38,12 +38,15 @@ var send = {
 
 function modalSMS() {
 	
+	//Clear Main Display
+	extra.refresh();
+	
 	// Cancel vibrate if running
 	navigator.vibrate(0);
 	extra.cancelTimeOut(timeoutVar);
 
 	// Get the modal
-	var modal = document.getElementById('myModal');
+	var modal = document.getElementById('smsModal');
 
 	// Get the button that opens the modal
 	var btn = document.getElementById("sendSMS");

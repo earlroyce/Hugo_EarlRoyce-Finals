@@ -34,14 +34,19 @@ var app = {
     }
 };
 
-/* Local Storage Variable */
+/* Local Storage to Control Welcome Alert */
 
-var storage = window.localStorage;
+var firstRun;
+var subscription;
 
-/* Delay OneSignal Initialization */
-
-//window.plugins.OneSignal.setRequiresUserPrivacyConsent(true); //delayed
-//window.plugins.OneSignal.setRequiresUserPrivacyConsent(false); //not delayed
+// This alert will only appear once
+window.onload = function () {
+    if (localStorage.getItem("firstRun") === null) {
+		//localStorage.setItem("subscription", true);
+		alert("Thanks for installing my app. You are subscribed to receive push notifications. You can opt out by clicking on the Push Notification button.");
+        localStorage.setItem("firstRun", true);
+    }
+}
 
 /* Required initialization for OneSignal */
 
@@ -58,7 +63,3 @@ document.addEventListener('deviceready', function () {
     .handleNotificationOpened(notificationOpenedCallback)
     .endInit();
 }, false);
-
-/* Initialize Unsubscribed to Push Notifications */
-
-// window.plugins.OneSignal.setSubscription(false);
