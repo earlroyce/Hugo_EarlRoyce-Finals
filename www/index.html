@@ -29,7 +29,6 @@
 
     </head>
     
-	<!-- <body onload="app.initialize()"> -->
 	<body>
 		<center>
 		<div id="nameHeader" style="background-color:#58D68D;width:100%;">
@@ -63,7 +62,6 @@
 			</tr>
 			<tr><td height="10" colspan="3"></td></tr>
 			<tr>
-				<!-- <td height="25"> <button id ="vibrateButton" onclick="vibratePhone.start()"><img src="img/vibrate.png" width="60%"></button></td> -->
 				<td height="25"> <button id ="vibrateButton" onclick="vibratePhone()"><img src="img/vibrate.png" width="60%"></button></td>
 				<td></td>
 				<td height="25"> <button id="cameraButton" onclick="takePhoto()"><img src="img/camera.png" width="60%"></button></td>
@@ -115,28 +113,48 @@
 		
 		<!-- SMS Interface Using A Modal Box -->
 		
-		<!-- The Modal -->
-		<div id="myModal" class="modal" style="display:none">
+		<!-- The SMS Modal -->
+		<div id="smsModal" class="modal" style="display:none">
 
 		  <!-- Modal content -->
 		  <div class="modal-content">
 			<span class="close">&times;</span>
+
 			<center>
-			<h3>SMS Interface</h3>
-			<h5>This interface is only for sending SMS.</h5>
-			<h5>To read messages, open your native SMS app.</h5>
-			<br />
-			<form id="smsForm">
-				<span>To: </span><input id="numberTxt" placeholder="Enter mobile number" value="" type="tel" />
-				<br /> <br />
-				<textarea id="messageTxt" placeholder="Enter message" value=""></textarea>
-				<br /> <br />
-				<input type="button" onclick="send.sendSms()" value="Send SMS" />
-			</form>
-			<h5><i>Note: Standard charges will apply.</i><h5>
-	
+				<h3>SMS Interface</h3>
+				<h5>This interface is only for sending SMS.</h5>
+				<h5>To read messages, open your native SMS app.</h5>
+				<br />
+				<form id="smsForm">
+					<span>To: </span><input id="numberTxt" placeholder="Enter mobile number" value="" type="tel" />
+					<br /> <br />
+					<textarea id="messageTxt" placeholder="Enter message" value="" rows="4" cols="30"></textarea>
+					<br /> <br />
+					<input type="button" onclick="send.sendSms()" value="Send SMS" />
+				</form>
+				<h5><i>Note: Standard charges will apply.</i><h5>
 				
 			</center>
+		  </div>
+		</div>
+		
+		<!-- Geolocation Result Using A Modal Box -->
+		
+		<!-- The Map Modal -->
+		<div id="mapModal" class="modal" style="display:none">
+
+		  <!-- Modal content -->
+		  <div class="modal-content">
+			<span class="closeMap">&times;</span>
+
+			<center>
+				<h3>You Are Here</h3>
+				<h5>This interface shows the area surrounding your static location.</h5>
+
+				<p id="geoTextDisplay"></p>
+				<p id="mapDisplay"></p>
+			</center>
+			
 		  </div>
 
 		</div>
