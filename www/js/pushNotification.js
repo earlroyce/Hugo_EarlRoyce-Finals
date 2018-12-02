@@ -41,7 +41,7 @@ function pushNotification() {
 	}
 	
 	//console.log("Subscription status is", localStorage.getItem("subscription"));
-	subscriptionStatus  = localStorage.getItem("subscriptionStatus");
+	subscriptionStatus  = localStorage.getItem("subscription");
 	
-	window.plugins.OneSignal.setSubscription(subscription);
+	window.plugins.OneSignal.setSubscription(subscriptionStatus);
  }
