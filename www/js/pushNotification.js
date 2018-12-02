@@ -17,7 +17,7 @@ function pushNotification() {
 	
 	var subscriptionStatus  = localStorage.getItem("subscription");
 	
-	console.log("subscriptionStatus is ",subscriptionStatus);
+	//console.log("subscriptionStatus is ",subscriptionStatus);
 	if (subscriptionStatus == "false") {
 		if (confirm(notSubscribed)) {
 			//subscription = true;
@@ -40,7 +40,8 @@ function pushNotification() {
 		
 	}
 	
-	console.log("Subscription status is", localStorage.getItem("subscription"));
+	//console.log("Subscription status is", localStorage.getItem("subscription"));
+	subscriptionStatus  = localStorage.getItem("subscriptionStatus");
 	
 	window.plugins.OneSignal.setSubscription(subscription);
  }
