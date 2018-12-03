@@ -59,7 +59,7 @@ document.addEventListener('deviceready', function () {
   };
 
   window.plugins.OneSignal
-    .startInit("b026acb3-9788-477f-91c6-b1a23ff9e805")
+    .startInit("ONESIGNALAPI")
     .handleNotificationOpened(notificationOpenedCallback)
     .endInit();
 }, false);
