@@ -58,7 +58,7 @@ function geoLocation() {
 		var markerPosition = {lat: position.coords.latitude, lng: position.coords.longitude};
 		
 		var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="
-		+latlon+"&zoom=17&size=275x200&sensor=false&key=AIzaSyAM5tok2j0mi9Ro5h-XP4tfY_Pu4A_Ikak";
+		+latlon+"&zoom=17&size=275x200&sensor=false&key=GOOGLEMAPSAPI";
 
 		document.getElementById("mapDisplay").innerHTML = "<img src='"+img_url+"'>";
 		
